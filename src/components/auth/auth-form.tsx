@@ -57,6 +57,9 @@ export function AuthForm({ mode, initialErrorCode }: AuthFormProps) {
         : await supabase.auth.signInWithPassword({ email, password });
 
       if (error) {
+        if (isSignup) {
+          console.error("Supabase sign-up request returned an error:", error);
+        }
         setErrorMessage(error.message);
         return;
       }
@@ -69,6 +72,10 @@ export function AuthForm({ mode, initialErrorCode }: AuthFormProps) {
       router.replace("/dashboard");
       router.refresh();
     } catch (error) {
+      console.error(
+        isSignup ? "Supabase sign-up request failed:" : "Supabase sign-in request failed:",
+        error,
+      );
       setErrorMessage(
         error instanceof Error ? error.message : "Something went wrong. Please try again.",
       );
