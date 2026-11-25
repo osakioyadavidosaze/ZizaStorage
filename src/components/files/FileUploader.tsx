@@ -14,8 +14,8 @@ import {
   X,
 } from "lucide-react";
 import { Upload as TusUpload } from "tus-js-client";
-import { createClient } from "@/lib/supabase/client";
-import { getSupabaseConfig } from "@/lib/supabase/config";
+import { createClient } from "@/utils/supabase/client";
+import { getSupabaseConfig } from "@/utils/supabase/config";
 import { formatBytes, safeStorageFileName } from "@/lib/files";
 
 const STORAGE_BUCKET = "vault";

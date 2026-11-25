@@ -12,7 +12,7 @@ import {
   Mail,
   ShieldCheck,
 } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@/utils/supabase/client";
 
 type AuthFormProps = {
   mode: "login" | "signup";

@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 import { FileUploader } from "@/components/files/FileUploader";
 import { formatBytes, safeStorageFileName } from "@/lib/files";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@/utils/supabase/client";
 import { signOut } from "@/app/dashboard/actions";
 
 const STORAGE_BUCKET = "vault";
